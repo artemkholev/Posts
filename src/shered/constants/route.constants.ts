@@ -1,9 +1,9 @@
 export enum Links {
   HOME = '/',
-  POSTS = '/about',
+  POSTS = '/posts',
 }
 
 export enum PathNames {
   HOME = 'home',
-  POSTS = 'about',
+  POSTS = 'posts',
 }

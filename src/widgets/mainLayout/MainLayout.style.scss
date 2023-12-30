@@ -1,0 +1,22 @@
+.page_wrapper {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'content'
+    'footer';
+  grid-template-rows: 100px auto 200px;
+  width: 100vw;
+  height: 100vh;
+
+  @media(max-width:1000px) {
+    grid-template-rows: 100px auto 300px;
+  }
+
+  @media(max-width:768px) {
+    grid-template-rows: 100px auto 350px;
+  }
+
+  @media(max-width:400px) {
+    grid-template-rows: 100px auto 450px;
+  }
+}

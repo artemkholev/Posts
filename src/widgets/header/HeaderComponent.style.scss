@@ -1,0 +1,142 @@
+// @import '../../app/assets/styles/vars';
+
+.header {
+  display: flex;
+  padding: 20px 50px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+
+  & > .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  & > .links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+    height: 100%;
+    align-self: stretch;
+    cursor: pointer;
+    & > a > svg {
+      display: flex;
+      margin: 0 auto;
+      gap: 8px;
+    }
+    & > a > p {
+      text-align: center;
+      // font-family: $text;
+      // font-size: $text-size;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+  & > .burgerTheme {
+    display: flex;
+    gap: 10px;
+    & > .burger {
+      display: none;
+    }
+    & > .isDark {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: none;
+
+      background-color: transparent;
+      cursor: pointer;
+
+      &:focus:active {
+        border: none;
+      }
+    }
+  }
+  
+}
+
+.dark-header {
+  background-color: black;
+  border-bottom: 2px solid white;
+  color: white;
+  transition: 0.3s;
+  svg > path {
+    fill: #fff;
+  }
+  a {
+    color: #fff;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+  }
+}
+
+@media (max-width: 1000px) {
+  .header {
+    & > .finctionsHeader {
+      & > .catalogButton {
+        display: none;
+      }
+    }
+
+    & > .generalInfo {
+      display: none;
+    }
+
+    & > .burgerTheme {
+      & > .burger {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    & > .finctionsHeader {
+      & > .catalogButton {
+        display: none;
+      }
+      & > .search {
+        display: none;
+      }
+    }
+
+    & > .generalInfo {
+      display: none;
+    }
+
+    & > .burgerTheme {
+      & > .burger {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    & > .finctionsHeader {
+      & > .catalogButton {
+        display: none;
+      }
+      & > .search {
+        display: none;
+      }
+    }
+
+    & > .generalInfo {
+      display: none;
+    }
+
+    & > .burgerTheme {
+      & > .burger {
+        display: block;
+      }
+    }
+  }
+}
