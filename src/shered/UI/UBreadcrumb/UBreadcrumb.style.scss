@@ -1,0 +1,11 @@
+.breadcrumbs-wrapper {
+  display: flex;
+  font-size: var(--bc-fs);
+  a {
+    text-decoration: none;
+    color: var(--bc-color);
+  }
+  p {
+    opacity: 0.5;
+  }
+}

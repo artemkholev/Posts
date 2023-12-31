@@ -3,6 +3,7 @@ import { apiAxios } from '../api';
 import { defineStore } from 'pinia';
 import { computed, reactive, ref } from 'vue';
 import { useRoute } from 'vue-router';
+import type { IAuthor } from '../api/postsApi/authorApi.types';
 
 export const usePostsStore = defineStore('posts', () => {
   const isLoading = ref<boolean>(false);
@@ -10,6 +11,7 @@ export const usePostsStore = defineStore('posts', () => {
 
   let posts = ref<IPost[]>([]);
   const post = ref<IPost>();
+  const author = ref<IAuthor>();
 
   const selected = ref<string>('');
   const page = ref(1);
@@ -64,7 +66,8 @@ export const usePostsStore = defineStore('posts', () => {
   const getPost = async () => {
     isLoading.value = true;
     try {
-      post.value = await apiAxios('/posts' +route.params.id);
+      const responce = await apiAxios('/posts/' + route.params.id);
+      post.value = responce.data;
       isError.value = false;
     } catch (error) {
       isError.value = true;
@@ -73,5 +76,19 @@ export const usePostsStore = defineStore('posts', () => {
       isLoading.value = false;
     }
   };
-  return { getPosts, removePost, isError, isLoading, posts, page, limit, selected, totalPages, selectOptions, sortedPost };
+
+  const getInfoAboutAuthor = async (id: number | undefined) => {
+    isLoading.value = true;
+    try {
+      const responce = await apiAxios('/users/' + id);
+      author.value = responce.data;
+      isError.value = false;
+    } catch (error) {
+      isError.value = true;
+      console.error(error);
+    } finally {
+      isLoading.value = false;
+    }
+  };
+  return { getInfoAboutAuthor, getPosts, getPost, removePost, isError, isLoading, posts, post, page, limit, selected, totalPages, selectOptions, sortedPost, author };
 });

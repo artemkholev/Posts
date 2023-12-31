@@ -1,8 +1,7 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory, type RouteLocationNormalizedLoaded } from "vue-router";
 import { Links, PathNames } from '@/shered/constants/route.constants';
 import MainLayout from '@/widgets/mainLayout/MainLayout.vue';
 import MainPage from "@/pages/mainPage/MainPage.vue";
-import { ref } from "vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,7 +21,38 @@ const router = createRouter({
       component: () => import('@/pages/postsPage/PostsPage.vue'),
       meta: {
         layout: MainLayout,
-        // title: 'Posts'
+        // title: 'Posts',
+        breadcrumb: (route: RouteLocationNormalizedLoaded) => [
+          {
+            title: 'Main Page',
+            link: Links.HOME
+          },
+          {
+            title: route.meta.title,
+          }
+        ]
+      }
+    },
+    {
+      path: `${Links.POSTS}/:id`,
+      name: PathNames.POST,
+      component: () => import('@/pages/postPage/PostPage.vue'),
+      meta: {
+        layout: MainLayout,
+        // title: 'Post',
+        breadcrumb: (route: RouteLocationNormalizedLoaded) => [
+          {
+            title: 'Main Page',
+            link: Links.HOME
+          },
+          {
+            title: 'Posts',
+            link: Links.POSTS
+          },
+          {
+            title: route.params.id as string
+          }
+        ]
       }
     },
   ]

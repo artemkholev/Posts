@@ -1,0 +1,10 @@
+.post-container {
+  border: 2px solid greenyellow;
+  border-radius: 10px;
+  padding: 10px;
+  flex-grow: 1;
+  font-size: var(--title-fs);
+}
+.post-container {
+  font-size: var(--post-fs);
+}

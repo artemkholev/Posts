@@ -16,9 +16,10 @@
   </sidebar-elem>
 
   <div :class="contentClasses">
-      {{ $route.meta.title }}
+    <breadcrumb-elem/>
+      <!-- {{ $route.meta.title }} -->
       <!-- <v-divider v-if="$route.meta.title"></v-divider> -->
-      <slot></slot>
+    <slot></slot>
   </div>
 </template>
 
