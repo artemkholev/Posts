@@ -28,14 +28,14 @@ const router = createRouter({
   ]
 });
 
-router.beforeEach((to, from, next) => {
-  const isAuth = ref(true);
-  if (to.meta.requiredAuth && !isAuth.value) {
-    alert('Нужна авторизация!');
-    next({ name: PathNames.HOME });
-  } else {
-    next();
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   const isAuth = ref(true);
+//   if (to.meta.requiredAuth && !isAuth.value) {
+//     alert('Нужна авторизация!');
+//     next({ name: PathNames.HOME });
+//   } else {
+//     next();
+//   }
+// });
 
 export default router;

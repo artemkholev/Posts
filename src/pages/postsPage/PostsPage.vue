@@ -1,5 +1,5 @@
 <template>
-  <div class="containerBucket">
+  <div class="containerPosts">
     <div class="sortOption">
       <select-elem
         v-model="selected"
@@ -38,6 +38,8 @@ const { getPosts } = postsStore;
 const changePage = (currentPage: number) => {
   page.value = currentPage;
 };
+
+console.log(selectOptions.value)
 
 watch(page, () => {
   getPosts();

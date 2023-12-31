@@ -1,6 +1,6 @@
 <template>
   <div v-if="posts.length > 0">
-    <h3>Корзина</h3>
+    <h3>Посты</h3>
     <div name="bucket-list">
       <PostItem v-for="post in posts"
         :post="post"

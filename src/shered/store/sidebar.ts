@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 
-export const useSidebarStore = defineStore('posts', () => {
+export const useSidebarStore = defineStore('sidebar', () => {
   const isNavOpen = ref<boolean>(false);
 
   const changeSidebarPanel = () => {

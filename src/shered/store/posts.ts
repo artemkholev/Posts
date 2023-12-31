@@ -59,5 +59,19 @@ export const usePostsStore = defineStore('posts', () => {
       isLoading.value = false;
     }
   };
+
+
+  const getPost = async () => {
+    isLoading.value = true;
+    try {
+      post.value = await apiAxios('/posts' +route.params.id);
+      isError.value = false;
+    } catch (error) {
+      isError.value = true;
+      console.error(error);
+    } finally {
+      isLoading.value = false;
+    }
+  };
   return { getPosts, removePost, isError, isLoading, posts, page, limit, selected, totalPages, selectOptions, sortedPost };
 });

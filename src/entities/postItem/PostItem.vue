@@ -8,20 +8,7 @@
       </div>
     </div>
     <div class="post__button" @click="removePost(post)">
-      <button-elem
-        :clName="'post__button'"
-        :title="'Удалить'"
-        :handler="() => null"
-        :width="'100px'"
-        :height="'48px'"
-        :background="'#70C05B'"
-        :textColor="null"
-        :fontSize="null"
-        :fontWeight="null"
-        :margin="'10px'"
-        :borderRadius="'10px'"
-        :icon="null"
-      />
+    
     </div>
   </div>
 </template>

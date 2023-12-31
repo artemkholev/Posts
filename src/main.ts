@@ -1,4 +1,5 @@
 import components from './shered/UI';
+import './app/index.scss';
 
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
