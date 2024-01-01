@@ -1,11 +1,15 @@
 <template>
-  <div class="post" @click.left="$router.push({
-          name: PathNames.POST,
-          params: {
-            id: post.id
-          },
-          query: $route.query
-        })">
+  <div 
+    class="post" 
+    @mousedown.left="$router.push({
+      name: PathNames.POST,
+      params: {
+        id: post.id
+      },
+      query: $route.query
+    })"
+    @mousedown.right="removePost(post)"
+  >
     <div class="post__info">
       <p>{{ post.id }}</p>
       <div class="post__info-elem">
@@ -27,7 +31,6 @@ defineProps({
   }
 })
 
-// removePost(post)
 const postsStore = usePostsStore();
 const { removePost } = postsStore;
 </script>
