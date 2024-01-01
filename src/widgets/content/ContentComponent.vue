@@ -1,13 +1,24 @@
 <template>
   <sidebar-elem>
     <div :class="sidebarClasses">
-      <h1>Menu</h1>
+      <h1 :style="{color: 'greenyellow'}">Menu</h1>
         <ul 
           class="sidebar-panel-nav"
           @click="changeSidebarPanel" 
         >
           <li>
-            <router-link to="/user/favorites">
+            <router-link 
+              to="/"
+              :style="{color: 'greenyellow', textDecoration: 'none'}"
+            >
+              Главная
+            </router-link>
+          </li>
+          <li>
+            <router-link 
+              to="/posts"
+              :style="{color: 'greenyellow', textDecoration: 'none'}"
+            >
               Посты
             </router-link>
           </li>
