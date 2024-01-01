@@ -1,11 +1,27 @@
 .breadcrumbs-wrapper {
   display: flex;
+  color: black;
   font-size: var(--bc-fs);
   a {
     text-decoration: none;
-    color: var(--bc-color);
+    color: black;
   }
-  p {
-    opacity: 0.5;
+  & > .breadcrumbs {
+    & > .lastTitle {
+      border-bottom: 1px solid black;
+    }
+  }
+}
+
+.dark-breadcrumbs {
+  color: white;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  & > .breadcrumbs {
+    & > .lastTitle {
+      border-bottom: 1px solid white;
+    }
   }
 }

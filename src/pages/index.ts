@@ -12,7 +12,12 @@ const router = createRouter({
       component: MainPage,
       meta: {
         layout: MainLayout,
-        // title: 'Main Page'
+        title: 'Главная',
+        breadcrumb: () => [
+          {
+            title: 'Главная'
+          }
+        ]
       }
     },
     {
@@ -21,10 +26,10 @@ const router = createRouter({
       component: () => import('@/pages/postsPage/PostsPage.vue'),
       meta: {
         layout: MainLayout,
-        // title: 'Posts',
+        title: 'Список постов',
         breadcrumb: (route: RouteLocationNormalizedLoaded) => [
           {
-            title: 'Main Page',
+            title: 'Главная',
             link: Links.HOME
           },
           {
@@ -39,18 +44,18 @@ const router = createRouter({
       component: () => import('@/pages/postPage/PostPage.vue'),
       meta: {
         layout: MainLayout,
-        // title: 'Post',
+        title: 'Пост',
         breadcrumb: (route: RouteLocationNormalizedLoaded) => [
           {
-            title: 'Main Page',
+            title: 'Главная',
             link: Links.HOME
           },
           {
-            title: 'Posts',
+            title: 'Список постов',
             link: Links.POSTS
           },
           {
-            title: route.params.id as string
+            title: 'Пост № '+ route.params.id as string
           }
         ]
       }

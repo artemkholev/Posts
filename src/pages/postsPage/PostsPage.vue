@@ -39,8 +39,6 @@ const changePage = (currentPage: number) => {
   page.value = currentPage;
 };
 
-console.log(selectOptions.value)
-
 watch(page, () => {
   getPosts();
 });

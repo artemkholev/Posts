@@ -7,11 +7,12 @@ export interface IBreadcrumb {
 }
 
 export type TBreadcrumbType = (route: RouteLocationNormalizedLoaded) => IBreadcrumb[];
+
 declare module 'vue-router' {
   interface RouteMeta {
     layout?: unknown;
     title?: string;
     requiredAuth?: boolean;
-    breadcrumb?: TBreadcrumbType;
+    breadcrumb: TBreadcrumbType;
   }
 }
