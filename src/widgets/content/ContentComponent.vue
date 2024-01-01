@@ -6,7 +6,7 @@
           class="sidebar-panel-nav"
           @click="changeSidebarPanel" 
         >
-          <li>
+          <li :style="{margin: '15px'}">
             <router-link 
               to="/"
               :style="{color: 'greenyellow', textDecoration: 'none'}"
@@ -14,7 +14,7 @@
               Главная
             </router-link>
           </li>
-          <li>
+          <li :style="{margin: '15px'}">
             <router-link 
               to="/posts"
               :style="{color: 'greenyellow', textDecoration: 'none'}"
